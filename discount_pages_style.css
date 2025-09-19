@@ -1,0 +1,55 @@
+/* Контейнер: ортасына қою және торлау */
+#list_electr_white {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  position: relative;
+}
+
+
+#list_electr_white::before,
+#list_electr_white::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0,0,0,0.18) 10%,
+    rgba(0,0,0,0.18) 90%,
+    transparent 100%
+  );
+}
+
+#list_electr_white::before { left: 0; }
+#list_electr_white::after  { right: 0; }
+
+#list_electr_white .product-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+#list_electr_white .product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+
+@media (max-width: 640px) {
+  #list_electr_white::before,
+  #list_electr_white::after {
+    display: none;
+  }
+}

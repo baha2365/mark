@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Іздеу нәтижесі</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="logic_2.js"></script>
+  <script defer src="logic.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flex.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <ul id="list_electr_white"></ul>
+  <script>
+
+function filterPhones() {
+  let query = document.getElementById("search_input").value.toLowerCase().trim();
+  window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+}
+
+
+
+
+    let params = new URLSearchParams(window.location.search);
+    let query = params.get("query")?.toLowerCase() || "";
+
+    let list_of_electronics = [];
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    let phone_list = document.getElementById("list_electr_white");
+
+    fetch("electronics.json")
+    .then(response => response.json())
+    .then(data => {
+        list_of_electronics = data;
+        let filtered = list_of_electronics.filter(phone =>
+        phone.name.toLowerCase().includes(query)
+        );
+        renderPhoneList(filtered);
+    })
+    .catch(error => console.error("Error loading JSON:", error));
+
+    function renderPhoneList(array) {
+    phone_list.innerHTML = "";
+
+    array.forEach(phone => {
+        let item = document.createElement('li');
+        item.classList.add("product-card");
+
+
+        // ===================
+        item.addEventListener("click", () => {
+        window.location.href = `description.html?id=${encodeURIComponent(phone.name)}`;
+        });
+        // ===================
+
+        let img = document.createElement('img');
+        img.src = phone.images[0];
+        img.alt = phone.name;
+        img.style.width = "200px";
+
+        let name = document.createElement('p');
+        name.textContent = phone.name;
+
+        let price = document.createElement('h4');
+        price.textContent = phone.price;
+
+
+        let buttons = document.createElement('button');
+        buttons.textContent = 'Buy';
+        buttons.classList.add("buy-btn");
+
+
+        buttons.addEventListener('click', (e) => {
+        e.stopPropagation();
+        alert(`${phone.name} purchased!`);
+        });
+
+        let heartButton = document.createElement('button');
+        let heartIcon = document.createElement('i');
+
+        if (favorites.includes(phone.name)) {
+        heartIcon.classList.add("fa-solid", "fa-heart");
+        } else {
+        heartIcon.classList.add("fa-regular", "fa-heart");
+        }
+        heartIcon.style.color = "red";
+
+        heartButton.appendChild(heartIcon);
+        heartButton.classList.add("heart_button");
+
+        heartButton.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (favorites.includes(phone.name)) {
+            favorites = favorites.filter(fav => fav !== phone.name);
+            heartIcon.classList.remove("fa-solid");
+            heartIcon.classList.add("fa-regular");
+        } else {
+            favorites.push(phone.name);
+            heartIcon.classList.remove("fa-regular");
+            heartIcon.classList.add("fa-solid");
+        }
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+        });
+
+        item.appendChild(img);
+        item.appendChild(name);
+        item.appendChild(price);
+        item.appendChild(buttons);
+        item.appendChild(heartButton);
+
+        phone_list.appendChild(item);
+    });
+    }
+  </script>
+</body>
+</html>

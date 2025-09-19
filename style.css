@@ -1,0 +1,142 @@
+.ggg{
+    color: red;
+}
+
+.center_text{
+    text-align: center;
+}
+
+.black_style{
+    color:white;
+    background-color: black;
+}
+.white_style{
+    color:black;
+    background-color: white;
+}
+
+
+.search-icon {
+  position: relative;
+  left:37.5%;
+  font-size: 20px;
+  color: #555;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.search-icon:hover {
+  color: white;
+  background: #007bff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.search-icon:active {
+  transform: scale(0.95);
+}
+
+
+.search-icon_camera {
+  position: relative;
+  left:37%;
+  font-size: 20px;
+  color: #555;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.search-icon_camera:hover {
+  color: white;
+  background: #007bff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.search-icon_camera:active {
+  transform: scale(0.95);
+}
+
+
+
+#list_electr_white{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+#list_electr_white li{
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+#list_electr_black{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+#list_electr_black li{
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.link_home{
+    position: absolute;
+    left: 1800px;
+    font-size: 20px;
+}
+
+.incr_size {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    color:red;
+}
+.decr_size{
+  transform: scale(1);
+  transition: transform 0.3 ease;
+  color:black;
+}
+
+@media (max-width:500px){
+  .link_home{
+    left: 400px;
+  }
+}
+
+.serch_input_style{
+  position: relative;
+  left:37%;
+  border-radius: 20px;
+  background-color: rgb(201, 201, 201);
+  font-size: 20px;
+  width: 400px;
+}
+
+
+
+#link_favorites{
+  position: absolute;
+  right:29px;
+  top:9%;
+}

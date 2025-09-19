@@ -1,0 +1,80 @@
+[
+  {
+    "name": "IPhone XR",
+    "price": "$7000",
+    "description": {
+      "Display":"A 6.1-inch Liquid Retina HD display with rounded corners and True Tone technology.",
+      "Processor":"Powered by the A12 Bionic chip, offering strong performance for its time.",
+      "Camera":"A 12MP wide-angle rear camera with advanced Portrait Mode and a 7MP front TrueDepth camera for selfies and facial recognition.",
+      "Security":"Fast and secure Face ID for authentication."},
+
+    "images": [
+    "images/Снимок экрана 2025-09-17 181115.png",
+    "https://m.media-amazon.com/images/I/61FAlH3md+L._UF894,1000_QL80_.jpg"
+  ],
+  "video": "https://youtu.be/etGnGM6if6M?si=Q9Z1VG3i7y0cyPOQ"
+  },
+  {
+    "name": "iphone",
+    "price": "$1000",
+    "description":{
+      "Display":"A 6.1-inch Liquid Retina HD display with rounded corners and True Tone technology.",
+      "Processor":"Powered by the A12 Bionic chip, offering strong performance for its time.",
+      "Camera":"A 12MP wide-angle rear camera with advanced Portrait Mode and a 7MP front TrueDepth camera for selfies and facial recognition.",
+      "Security":"Fast and secure Face ID for authentication."},
+    "images": [
+    "images/Снимок экрана 2025-09-17 200100.png",
+    "https://best-magazin.com/image/cache/catalog/Apple/iphone-16-pro-max/iphone-16-pro-max-black-titanium-2-800x800.jpg"
+  ],
+  "video": "https://youtu.be/xQwfnYh2dmY"
+  },
+  {
+    "name": "samsung",
+    "price": "$990",
+    "description":{
+      "Display":"A 6.1-inch Liquid Retina HD display with rounded corners and True Tone technology.",
+      "Processor":"Powered by the A12 Bionic chip, offering strong performance for its time.",
+      "Camera":"A 12MP wide-angle rear camera with advanced Portrait Mode and a 7MP front TrueDepth camera for selfies and facial recognition.",
+      "Security":"Fast and secure Face ID for authentication."},
+    "images": ["images/Снимок экрана 2025-09-17 200250.png",
+    "https://gadgetstore.kz/wa-data/public/shop/products/41/09/941/images/2694/2694.970.webp"
+  ],
+  "video": "video/iphone13.mp4"
+  },
+  {
+    "name": "xiaomi redmi",
+    "price": "$500",
+    "description":{
+      "Display":"A 6.1-inch Liquid Retina HD display with rounded corners and True Tone technology.",
+      "Processor":"Powered by the A12 Bionic chip, offering strong performance for its time.",
+      "Camera":"A 12MP wide-angle rear camera with advanced Portrait Mode and a 7MP front TrueDepth camera for selfies and facial recognition.",
+      "Security":"Fast and secure Face ID for authentication."},
+    "images": ["images/Снимок экрана 2025-09-17 200354.png"
+  ],
+  "video": "video/iphone13.mp4"
+  },
+  {
+    "name": "PlayStation 5",
+    "price": "$2200",
+    "description":{
+      "Display":"A 6.1-inch Liquid Retina HD display with rounded corners and True Tone technology.",
+      "Processor":"Powered by the A12 Bionic chip, offering strong performance for its time.",
+      "Camera":"A 12MP wide-angle rear camera with advanced Portrait Mode and a 7MP front TrueDepth camera for selfies and facial recognition.",
+      "Security":"Fast and secure Face ID for authentication."},
+    "images": ["images/Снимок экрана 2025-09-17 201017.png"
+  ],
+  "video": "video/iphone13.mp4"
+  },
+  {
+    "name":"nokia",
+    "price":"$20",
+    "description":{
+      "Display":"A 6.1-inch Liquid Retina HD display with rounded corners and True Tone technology.",
+      "Processor":"Powered by the A12 Bionic chip, offering strong performance for its time.",
+      "Camera":"A 12MP wide-angle rear camera with advanced Portrait Mode and a 7MP front TrueDepth camera for selfies and facial recognition.",
+      "Security":"Fast and secure Face ID for authentication."},
+    "images": ["images/Снимок экрана 2025-09-17 201128.png"
+  ],
+  "video": "video/iphone13.mp4"
+  }
+]

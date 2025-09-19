@@ -1,0 +1,12 @@
+#upload{
+    position: absolute;
+    left: 40%;
+}
+
+#preview{
+    border: 2px solid grey;
+    border-radius: 21px;
+    height: 200px;
+    position: relative;
+    left:40%;
+}

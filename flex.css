@@ -1,0 +1,140 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#favorites_list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+#favorites_list li{
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  color: black;
+}
+
+
+.buy-btn {
+  background: linear-gradient(135deg, red, #002fff);
+  color: white;
+  padding: 8px 30px;
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(224, 0, 245, 0.6);
+}
+
+.buy-btn:hover {
+  background: linear-gradient(135deg, #002fff, red);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(224, 0, 245, 0.6);
+}
+
+.buy-btn:active {
+  transform: scale(0.95);
+}
+
+
+.heart {
+  color: #ff0000;
+}
+
+.no_heart {
+  color: #ff0000;
+  display: none;
+}
+
+
+
+/* heart button */
+
+li {
+  position: relative;
+  list-style: none;
+  padding: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.heart_button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: 0;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.heart_button i {
+  font-size: 18px;
+}
+
+.heart_button:hover {
+  background: #ffe5e5;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.heart_button:active {
+  transform: scale(0.9);
+}
+
+
+
+
+
+/* speak button */
+#startSpeakButton{
+  position: absolute;
+  left: 1124px;
+  top:0px;
+  font-size: 18px;
+  color: #555;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 50%;
+  border:1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  height: 42px;
+  width: 42px;
+}
+
+#startSpeakButton:hover{
+  color: white;
+  background: #007bff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+#startSpeakButton:active{
+  transform: scale(0.95);
+}

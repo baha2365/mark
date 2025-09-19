@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reverse Image Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flex.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="reverse_img_style.css">
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.9.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+  <script defer src="logic.js"></script>
+</head>
+<body>
+  <label for="upload">
+  <input type="file" id="upload" accept="image/*" hidden>
+  <i name="upload" class="fa-solid fa-camera search-icon search-icon_camera"></i>
+  </label>
+
+  <br>
+  <hr>
+  <img id="preview" alt="Insert a image">
+  <hr>
+
+  <div id="results" class="result"></div>
+  <ul id="list_electr_white"></ul>
+
+
+  <script>
+    let model;
+    let products = [];
+
+    // Load model on start
+    async function loadModel() {
+      model = await mobilenet.load();
+      console.log("✅ MobileNet model loaded!");
+    }
+
+    // Cosine similarity
+    function cosineSim(vecA, vecB) {
+      let dot = 0, normA = 0, normB = 0;
+      for (let i = 0; i < vecA.length; i++) {
+        dot += vecA[i] * vecB[i];
+        normA += vecA[i] * vecA[i];
+        normB += vecB[i] * vecB[i];
+      }
+      return dot / (Math.sqrt(normA) * Math.sqrt(normB));
+    }
+
+    // Get embedding from image element
+    async function getEmbedding(imgEl) {
+      const activation = model.infer(imgEl, true);
+      return activation.dataSync();
+    }
+
+    // Load products.json
+    async function loadProducts() {
+      const res = await fetch("electronics.json");
+      products = await res.json();
+
+      // Precompute embeddings
+      for (let product of products) {
+        if (product.images && product.images.length > 0) {
+          const img = new Image();
+          img.crossOrigin = "anonymous";
+          img.src = product.images[0];
+          await new Promise(r => img.onload = r);
+          product.embedding = await getEmbedding(img);
+        }
+      }
+      console.log("✅ Products embeddings ready!");
+    }
+
+    // Run search
+async function runSearch(uploadedImg) {
+  const queryEmbedding = await getEmbedding(uploadedImg);
+
+  let scoredProducts = [];
+
+  for (let product of products) {
+    if (!product.embedding) continue;
+    const sim = cosineSim(queryEmbedding, product.embedding);
+    scoredProducts.push({ product, sim });
+  }
+
+  scoredProducts.sort((a, b) => b.sim - a.sim);
+
+  const filteredMatches = scoredProducts.filter(match => match.sim >= 0.6);
+
+  const resultDiv = document.getElementById("results");
+  if (filteredMatches.length > 0) {
+    const bestMatch = filteredMatches[0];
+
+    let descHtml = "";
+    if (bestMatch.product.description) {
+      for (let key in bestMatch.product.description) {
+        descHtml += `<b>${key}:</b> ${bestMatch.product.description[key]}<br>`;
+      }
+    }
+
+
+    const similarProducts = filteredMatches.map(match => match.product);
+    renderPhoneList(similarProducts);
+  } else {
+    renderPhoneList([]);
+  }
+}
+
+
+
+    // Handle file input (auto-search)
+    document.getElementById("upload").addEventListener("change", async e => {
+      const file = e.target.files[0];
+      if (file) {
+        const url = URL.createObjectURL(file);
+        const img = document.getElementById("preview");
+        img.src = url;
+        await new Promise(r => img.onload = r);
+        runSearch(img);
+      }
+    });
+
+    // Init
+    (async () => {
+      await loadModel();
+      await loadProducts();
+    })();
+  </script>
+</body>
+</html>
+
+
+

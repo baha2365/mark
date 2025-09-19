@@ -1,0 +1,57 @@
+.input_box {
+    position: absolute;
+    left:40%;
+    bottom: 50%;
+    width: 300px; /* Қораптың ені */
+    padding: 20px;
+    background-color: #fff; /* Фон түсі */
+    border: 2px solid #ccc; /* Шекара */
+    border-radius: 10px; /* Бұрыштарды дөңгелектеу */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Көлеңке */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input_box form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input_box input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.input_box .input_submit {
+    background-color: #0044ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.input_box .input_submit:hover {
+    background-color: #5610d6;
+}
+
+.input_box .input_a {
+    text-align: center;
+    color: #007BFF;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.input_box .input_a:hover {
+    text-decoration: underline;
+}
+
+.checkbox_style{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    bottom: 97px;
+    left: 285px;
+}

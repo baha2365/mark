@@ -39,7 +39,19 @@
     "images": ["images/Снимок экрана 2025-09-17 200250.png",
     "https://gadgetstore.kz/wa-data/public/shop/products/41/09/941/images/2694/2694.970.webp"
   ],
-  "video": "video/iphone13.mp4"
+  "video": "https://youtu.be/3i1OB6wKYms?si=zg3ADlKRbQxvulc7"
+  },
+  {
+    "name": "samsung a16",
+    "price": "$1990",
+    "description":{
+      "Display":"A 6.1-inch Liquid Retina HD display with rounded corners and True Tone technology.",
+      "Processor":"Powered by the A12 Bionic chip, offering strong performance for its time.",
+      "Camera":"A 12MP wide-angle rear camera with advanced Portrait Mode and a 7MP front TrueDepth camera for selfies and facial recognition.",
+      "Security":"Fast and secure Face ID for authentication."},
+    "images": ["images/Screenshot 2025-12-29 005445.png"
+  ],
+  "video": ""
   },
   {
     "name": "xiaomi redmi",
@@ -51,7 +63,7 @@
       "Security":"Fast and secure Face ID for authentication."},
     "images": ["images/Снимок экрана 2025-09-17 200354.png"
   ],
-  "video": "video/iphone13.mp4"
+  "video": "https://youtu.be/-IRU6QhRXpU?si=GfDHO__CrkNVVeZt"
   },
   {
     "name": "PlayStation 5",
@@ -63,7 +75,7 @@
       "Security":"Fast and secure Face ID for authentication."},
     "images": ["images/Снимок экрана 2025-09-17 201017.png"
   ],
-  "video": "video/iphone13.mp4"
+  "video": "https://youtu.be/1BU4VXofbQk?si=ZrFTyY4y0fSTzVtQ"
   },
   {
     "name":"nokia",
@@ -75,6 +87,18 @@
       "Security":"Fast and secure Face ID for authentication."},
     "images": ["images/Снимок экрана 2025-09-17 201128.png"
   ],
-  "video": "video/iphone13.mp4"
+  "video": "https://youtu.be/Vxa5m4nS98A?si=AhwqStEYZm2r2DuZ"
+  },
+  {
+    "name":"Apple Watch Series 7",
+    "price":"$200",
+    "description":{
+      "Display":"Always-On Retina LTPO OLED — 41 mm (352×430 px, ~904 mm²) or 45 mm (396×484 px, ~1143 mm²), up to 1000 nits brightness.",
+      "Processor":"Apple S7 dual-core 64-bit SiP.",
+    "Health & sensors":"Heart-rate sensor, blood oxygen (SpO₂) sensor, ECG support, accelerometer, gyroscope, ambient-light sensor, always-on altimeter, fall detection, plus full fitness/sleep/health tracking suite."},
+    "images": ["images/Screenshot 2025-11-27 105608.png",
+    "images/Screenshot 2025-11-27 105540.png"
+  ],
+  "video": "https://youtu.be/zQ92xdCyl98?si=1oWXn9cjpqxlVPXS"
   }
 ]

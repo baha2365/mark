@@ -88,7 +88,7 @@ async function runSearch(uploadedImg) {
 
   scoredProducts.sort((a, b) => b.sim - a.sim);
 
-  const filteredMatches = scoredProducts.filter(match => match.sim >= 0.6);
+  const filteredMatches = scoredProducts.filter(match => match.sim >= 0.7);
 
   const resultDiv = document.getElementById("results");
   if (filteredMatches.length > 0) {
